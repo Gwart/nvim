@@ -1,0 +1,8 @@
+require "gwart.options"
+require "gwart.keymaps"
+require "gwart.plugins"
+require "gwart.colorscheme"
+require "gwart.completion"
+require "gwart.lsp"
+require "gwart.nvim_tree"
+require "gwart.lualine"
