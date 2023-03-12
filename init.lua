@@ -1,8 +1,37 @@
-require "gwart.options"
-require "gwart.keymaps"
-require "gwart.plugins"
-require "gwart.colorscheme"
-require "gwart.completion"
-require "gwart.lsp"
-require "gwart.nvim_tree"
-require "gwart.lualine"
+require("gwart.options")
+require("gwart.keymaps")
+local bootstrap = require("gwart.bootstrap")
+bootstrap.InstallPackageManager()
+
+local packer = require("packer")
+packer.startup(function(use)
+	use "wbthomason/packer.nvim"
+	use
+	{
+		"neovim/nvim-lspconfig",
+		requires =
+		{
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+		},
+	}
+	use
+	{
+		"hrsh7th/nvim-cmp",
+		requires =
+		{
+			"hrsh7th/cmp-nvim-lsp",
+			"L3MON4D3/LuaSnip"
+		}
+
+	}
+	use "folke/tokyonight.nvim"
+end)
+
+if bootstrap.isBootstrap then
+	packer.sync()
+end
+
+vim.cmd[[colorscheme tokyonight-night]]
+
+require("gwart.lspconf").setup()

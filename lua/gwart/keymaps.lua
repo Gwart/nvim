@@ -1,10 +1,16 @@
-local opts = {noremap = true, silent = true}
-local keymap = vim.api.nvim_set_keymap
+local opt = { silent = true, noremap = true }
 
--- Telescope
-keymap("n", ",ff", "<cmd>Telescope find_files hidden=true<cr>", opts)
-keymap("n", ",lg", "<cmd>Telescope live_grep hidden=true<cr>", opts)
-keymap("n", ",lr", "<cmd>Telescope lsp_references<cr>", opts)
-keymap("n", ",fb", "<cmd>Telescope buffers<cr>", opts)
--- NvimTree
-keymap("n", ",nt", "<cmd>NvimTreeToggle<cr>", opts)
+local normal_key_value =
+{
+	 ["<leader>x"] = ":source %<CR>",
+	 ["<leader>s"] = ":wa<CR>",
+	 ["<leader>gd"] = ":lua vim.lsp.buf.declaration()<CR>",
+	 ["<leader>gD"] = ":lua vim.lsp.buf.definition()<CR>",
+	 ["<leader>dn"] = ":lua vim.diagnostic.goto_next()<CR>",
+	 ["<leader>dp"] = ":lua vim.diagnostic.goto_prev()<CR>"
+}
+
+for key, value in pairs(normal_key_value)
+do
+	vim.api.nvim_set_keymap('n', key, value, opt)
+end
