@@ -26,12 +26,23 @@ packer.startup(function(use)
 
 	}
 	use "folke/tokyonight.nvim"
+	use
+	{
+		"nvim-telescope/telescope.nvim", tag = "0.1.1",
+		requires =
+		{
+			{"nvim-lua/plenary.nvim"}
+		}
+}
 end)
 
 if bootstrap.isBootstrap then
 	packer.sync()
+	print("Wait for the packer sync and restart nvim")
+	return
 end
 
 vim.cmd[[colorscheme tokyonight-night]]
 
 require("gwart.lspconf").setup()
+require("telescope").setup{}
