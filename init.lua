@@ -33,7 +33,10 @@ packer.startup(function(use)
 		{
 			{"nvim-lua/plenary.nvim"}
 		}
-}
+    }
+	use "mfussenegger/nvim-dap"
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use "jay-babu/mason-nvim-dap.nvim"
 end)
 
 if bootstrap.isBootstrap then
@@ -46,3 +49,4 @@ vim.cmd[[colorscheme tokyonight-night]]
 
 require("gwart.lspconf").setup()
 require("telescope").setup{}
+require("gwart.dapconf").setup()

@@ -9,7 +9,14 @@ local normal_key_value =
 	 ["<leader>dn"] = ":lua vim.diagnostic.goto_next()<CR>",
 	 ["<leader>dp"] = ":lua vim.diagnostic.goto_prev()<CR>",
 	 ["<leader>fb"] = ":Telescope buffers<CR>",
-	 ["<leader>ff"] = ":Telescope find_files<CR>"
+	 ["<leader>ff"] = ":Telescope find_files<CR>",
+	 ["<leader>lg"] = ":Telescope live_grep<CR>",
+	 ["<leader>dut"] = ":lua require(\"dapui\").toggle()<CR>",
+	 ["<leader>dsb"] = ":DapToggleBreakpoint<CR>",
+	 ["<leader>dr"] = ":DapContinue<CR>",
+	 ["<leader>dsi"] = ":DapStepInto<CR>",
+	 ["<leader>dso"] = ":DapStepOver<CR>",
+
 }
 
 for key, value in pairs(normal_key_value)
