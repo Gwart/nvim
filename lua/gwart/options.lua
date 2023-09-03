@@ -7,7 +7,8 @@ local table =
 	ignorecase = true,
 	clipboard = "unnamed",
 	undofile = true,
-	completeopt = {"menu", "menuone", "noselect"}
+	completeopt = {"menu", "menuone", "noselect"},
+	expandtab = true
 }
 
 for key, value in pairs(table) do

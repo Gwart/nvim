@@ -16,10 +16,12 @@ local normal_key_value =
 	 ["<leader>dr"] = ":DapContinue<CR>",
 	 ["<leader>dsi"] = ":DapStepInto<CR>",
 	 ["<leader>dso"] = ":DapStepOver<CR>",
-
+	 ["<leader>tt"] = ":ToggleTerm<CR>:startinsert<CR>",
 }
 
 for key, value in pairs(normal_key_value)
 do
 	vim.api.nvim_set_keymap('n', key, value, opt)
 end
+
+vim.api.nvim_set_keymap('t', "<C-space>", "<C-\\><C-n>:q<CR>", opt) -- close terminal
