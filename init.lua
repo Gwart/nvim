@@ -45,6 +45,7 @@ packer.startup(function(use)
 			require("toggleterm").setup()
 		end
 	}
+    use "nvim-tree/nvim-tree.lua"
 end)
 
 if bootstrap.isBootstrap then
@@ -58,3 +59,4 @@ vim.cmd[[colorscheme tokyonight-night]]
 require("gwart.lspconf").setup()
 require("telescope").setup{}
 require("gwart.dapconf").setup()
+require("gwart.nvimtreeconf").setup()

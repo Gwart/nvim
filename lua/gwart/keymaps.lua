@@ -17,6 +17,7 @@ local normal_key_value =
 	 ["<leader>dsi"] = ":DapStepInto<CR>",
 	 ["<leader>dso"] = ":DapStepOver<CR>",
 	 ["<leader>tt"] = ":ToggleTerm<CR>:startinsert<CR>",
+     ["<leader>nt"] = ":NvimTreeToggle<CR>"
 }
 
 for key, value in pairs(normal_key_value)
