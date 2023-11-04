@@ -4,6 +4,7 @@ local normal_key_value =
 {
 	 ["<leader>x"] = ":source %<CR>",
 	 ["<leader>s"] = ":wa<CR>",
+	 ["<leader>sh"] = ":ClangdSwitchSourceHeader<CR>",
 	 ["<leader>gd"] = ":lua vim.lsp.buf.declaration()<CR>",
 	 ["<leader>gD"] = ":lua vim.lsp.buf.definition()<CR>",
 	 ["<leader>dn"] = ":lua vim.diagnostic.goto_next()<CR>",
