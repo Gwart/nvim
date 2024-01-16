@@ -28,7 +28,7 @@ packer.startup(function(use)
 	use "folke/tokyonight.nvim"
 	use
 	{
-		"nvim-telescope/telescope.nvim", tag = "0.1.1",
+		"nvim-telescope/telescope.nvim", tag = "0.1.4",
 		requires =
 		{
 			{"nvim-lua/plenary.nvim"}

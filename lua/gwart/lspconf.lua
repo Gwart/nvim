@@ -15,6 +15,8 @@ function lspconf.setup()
 
 			if string.find(server_name, "lua") then
 				user_conf.settings = { Lua = { diagnostics = { globals = { "vim" } } } }
+            elseif string.find(server_name, "clangd") then
+                user_conf.cmd = { "clangd", "--header-insertion=never" }
 			end
 
 			user_conf.capabilities = capabilities
